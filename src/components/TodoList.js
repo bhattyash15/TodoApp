@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TodoList=({todos}) =>{
+const TodoList=({todos,handleDelete,handleEdit}) =>{
   return (
     <ul className="allTodos">
     {
@@ -9,8 +9,8 @@ const TodoList=({todos}) =>{
             <span className="todoText" >
             {t.todo}
             </span>
-            <button>Edit </button>
-            <button>Delete</button>
+            <button onClick={()=>handleEdit(t.id)}>Edit </button>
+            <button onClick={()=>handleDelete(t.id)}>Delete</button>
             </li>
         ))
     }
